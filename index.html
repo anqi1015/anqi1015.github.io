@@ -18,7 +18,7 @@
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 4em;  /* Larger heading */
             text-align: center;
             color: #333;
             margin-bottom: 50px;
@@ -26,27 +26,27 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, auto);
+            gap: 30px;  /* More space between squares */
             width: 80%;
-            max-width: 1000px;
+            max-width: 1200px;  /* Adjust container width for larger squares */
             margin-bottom: 50px;
         }
 
         .square {
-            width: 200px;
-            height: 200px;
-            border-radius: 12px;
+            width: 300px;  /* Larger square size */
+            height: 300px; /* Larger square size */
+            border-radius: 15px;  /* Slightly larger border radius for rounded corners */
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 18px;
+            font-size: 24px;  /* Larger font size for text */
             font-weight: bold;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);  /* Slightly larger shadow */
         }
 
         .square:hover {
@@ -67,24 +67,12 @@
 
     <h1>My Portfolio</h1>
     <div class="container">
-        <div class="square square-1" onclick="window.location.href='https://your-project-link1.com'">
-            <span>Project 1</span>
-        </div>
-        <div class="square square-2" onclick="window.location.href='https://your-project-link2.com'">
-            <span>Project 2</span>
-        </div>
-        <div class="square square-3" onclick="window.location.href='https://your-project-link3.com'">
-            <span>Project 3</span>
-        </div>
-        <div class="square square-4" onclick="window.location.href='https://your-project-link4.com'">
-            <span>Project 4</span>
-        </div>
-        <div class="square square-5" onclick="window.location.href='https://your-project-link5.com'">
-            <span>Project 5</span>
-        </div>
-        <div class="square square-6" onclick="window.location.href='https://your-project-link6.com'">
-            <span>Project 6</span>
-        </div>
+        <div class="square square-1" onclick="window.location.href='https://your-project-link1.com'">Project 1</div>
+        <div class="square square-2" onclick="window.location.href='https://your-project-link2.com'">Project 2</div>
+        <div class="square square-3" onclick="window.location.href='https://your-project-link3.com'">Project 3</div>
+        <div class="square square-4" onclick="window.location.href='https://your-project-link4.com'">Project 4</div>
+        <div class="square square-5" onclick="window.location.href='https://your-project-link5.com'">Project 5</div>
+        <div class="square square-6" onclick="window.location.href='https://your-project-link6.com'">Project 6</div>
     </div>
 
 </body>
