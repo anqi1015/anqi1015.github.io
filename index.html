@@ -9,18 +9,19 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             flex-direction: column;
+            min-height: 100vh;
         }
 
         h1 {
+            font-size: 3em;
             text-align: center;
-            margin-bottom: 50px;
             color: #333;
+            margin-bottom: 50px;
         }
 
         .container {
@@ -29,26 +30,28 @@
             gap: 20px;
             width: 80%;
             max-width: 1000px;
+            margin-bottom: 50px;
         }
 
         .square {
-            width: 150px;
-            height: 150px;
-            border-radius: 8px;
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .square:hover {
             transform: scale(1.1);
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .square-1 { background-color: #f5a7b8; }
@@ -64,12 +67,24 @@
 
     <h1>My Portfolio</h1>
     <div class="container">
-        <div class="square square-1" onclick="window.location.href='https://example.com/project1'">Project 1</div>
-        <div class="square square-2" onclick="window.location.href='https://example.com/project2'">Project 2</div>
-        <div class="square square-3" onclick="window.location.href='https://example.com/project3'">Project 3</div>
-        <div class="square square-4" onclick="window.location.href='https://example.com/project4'">Project 4</div>
-        <div class="square square-5" onclick="window.location.href='https://example.com/project5'">Project 5</div>
-        <div class="square square-6" onclick="window.location.href='https://example.com/project6'">Project 6</div>
+        <div class="square square-1" onclick="window.location.href='https://your-project-link1.com'">
+            <span>Project 1</span>
+        </div>
+        <div class="square square-2" onclick="window.location.href='https://your-project-link2.com'">
+            <span>Project 2</span>
+        </div>
+        <div class="square square-3" onclick="window.location.href='https://your-project-link3.com'">
+            <span>Project 3</span>
+        </div>
+        <div class="square square-4" onclick="window.location.href='https://your-project-link4.com'">
+            <span>Project 4</span>
+        </div>
+        <div class="square square-5" onclick="window.location.href='https://your-project-link5.com'">
+            <span>Project 5</span>
+        </div>
+        <div class="square square-6" onclick="window.location.href='https://your-project-link6.com'">
+            <span>Project 6</span>
+        </div>
     </div>
 
 </body>
