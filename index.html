@@ -29,15 +29,15 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
-      width: 80%;
-      max-width: 1200px;
+      width: 70%;
+      max-width: 1000px;
       margin-top: 40px;
     }
 
     .square {
       position: relative;
       width: 100%;
-      padding-top: 100%; /* Aspect ratio 1:1 (square) */
+      padding-top: 80%; /* Slightly smaller square */
       background-color: #D8B8FF; /* pastel purple */
       transition: background-color 0.3s ease;
       overflow: hidden;
@@ -49,7 +49,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 24px;
+      font-size: 18px;
       color: white;
       font-weight: bold;
       transition: opacity 0.3s ease;
@@ -61,7 +61,7 @@
       left: 50%;
       transform: translateX(-50%);
       color: white;
-      font-size: 16px;
+      font-size: 14px;
       text-align: center;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -95,8 +95,8 @@
 
   <div class="portfolio-container">
     <div class="square" id="square1">
-      <div class="title">Project 1</div>
-      <div class="description">Description of Project 1</div>
+      <div class="title">AI Model</div>
+      <div class="description">Develop an AI model to Reduce hiring and training costs of employees by predicting which employees might leave the company.</div>
       <img src="image1.jpg" alt="Project 1 Image" class="image"/>
     </div>
     <div class="square" id="square2">
