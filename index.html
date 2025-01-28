@@ -110,10 +110,10 @@
         <!-- Square 3 -->
         <div class="square">
             <a href="https://example.com/project3" target="_blank">
-                <img src="https://github.com/your-username/your-repository-name/raw/main/images/image3.jpg" alt="Project 3">
+                <img src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/time_series.png?raw=true" alt="Project 3">
             </a>
-            <div class="title">Project 3</div>
-            <div class="description">Description of Project 3</div>
+            <div class="title">Time Series Model</div>
+            <div class="description">Develop time series forecasting models to predict future product prices 3</div>
         </div>
 
         <!-- Square 4 -->
@@ -144,4 +144,58 @@
         </div>
     </div>
 </body>
+
+        <script>
+        // Function to calculate the brightness of an image
+        function calculateBrightness(img) {
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            context.drawImage(img, 0, 0, img.width, img.height);
+            
+            var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+            var pixels = imageData.data;
+            var totalBrightness = 0;
+            var pixelCount = pixels.length / 4; // Each pixel has 4 values (RGBA)
+
+            // Loop through each pixel to calculate brightness
+            for (var i = 0; i < pixels.length; i += 4) {
+                var r = pixels[i];     // Red
+                var g = pixels[i + 1]; // Green
+                var b = pixels[i + 2]; // Blue
+                // Simple brightness formula: average of RGB
+                var brightness = (r + g + b) / 3;
+                totalBrightness += brightness;
+            }
+
+            var averageBrightness = totalBrightness / pixelCount;
+            return averageBrightness;
+        }
+
+        // Function to update the description color based on image brightness
+        function updateDescriptionColor(imageId, descriptionId) {
+            var img = document.getElementById(imageId);
+            var desc = document.getElementById(descriptionId);
+            
+            img.onload = function() {
+                var brightness = calculateBrightness(img);
+                if (brightness < 128) { // If the image is dark
+                    desc.classList.add('white'); // Make the description white
+                } else {
+                    desc.classList.remove('white'); // Keep the description black
+                }
+            }
+        }
+
+        // Update description color for all images
+        updateDescriptionColor('image1', 'desc1');
+        updateDescriptionColor('image2', 'desc2');
+        updateDescriptionColor('image3', 'desc3');
+        updateDescriptionColor('image4', 'desc4');
+        updateDescriptionColor('image5', 'desc5');
+        updateDescriptionColor('image6', 'desc6');
+    </script>
+</body>
+</html>
 </html>
