@@ -65,7 +65,6 @@
             left: 50%;
             transform: translate(-50%, -50%); /* Centers the description */
             font-size: 18px; /* Increased font size */
-            color: black; /* Black description by default */
             display: none; /* Hidden by default */
             z-index: 2;
             text-align: center;
@@ -84,11 +83,6 @@
         .square:hover {
             transform: scale(1.05); /* Slightly enlarge the square on hover */
         }
-
-        /* Styling for the white description */
-        .description.white {
-            color: white; /* White text color for dark images */
-        }
     </style>
 </head>
 <body>
@@ -100,7 +94,7 @@
                 <img id="image1" src="https://raw.githubusercontent.com/anqi1015/anqi1015.github.io/refs/heads/main/images/AI_model.png" alt="Project 1">
             </a>
             <div class="title">Project 1</div>
-            <div class="description" id="desc1">This is a detailed description of Project 1. It includes all the technologies used and the problem it solves.</div>
+            <div class="description" style="color: black;" id="desc1">This is a detailed description of Project 1. It includes all the technologies used and the problem it solves.</div>
         </div>
 
         <!-- Square 2 -->
@@ -109,7 +103,7 @@
                 <img id="image2" src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/customer_seg.jpeg?raw=true" alt="Project 2">
             </a>
             <div class="title">Project 2</div>
-            <div class="description" id="desc2">Project 2 is a web application that allows users to manage their tasks efficiently. Built using HTML, CSS, and JavaScript.</div>
+            <div class="description" style="color: black;" id="desc2">Project 2 is a web application that allows users to manage their tasks efficiently. Built using HTML, CSS, and JavaScript.</div>
         </div>
 
         <!-- Square 3 -->
@@ -118,7 +112,7 @@
                 <img id="image3" src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/time_series.png?raw=true" alt="Project 3">
             </a>
             <div class="title">Project 3</div>
-            <div class="description" id="desc3">A mobile app developed using React Native, allowing users to track their daily habits and improve productivity.</div>
+            <div class="description" style="color: white;" id="desc3">A mobile app developed using React Native, allowing users to track their daily habits and improve productivity.</div>
         </div>
 
         <!-- Square 4 -->
@@ -148,57 +142,5 @@
             <div class="description" id="desc6">This is an AI-powered chatbot built with Python and TensorFlow that can assist with customer service tasks.</div>
         </div>
     </div>
-
-    <script>
-        // Function to calculate the brightness of an image
-        function calculateBrightness(img) {
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            context.drawImage(img, 0, 0, img.width, img.height);
-            
-            var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-            var pixels = imageData.data;
-            var totalBrightness = 0;
-            var pixelCount = pixels.length / 4; // Each pixel has 4 values (RGBA)
-
-            // Loop through each pixel to calculate brightness
-            for (var i = 0; i < pixels.length; i += 4) {
-                var r = pixels[i];     // Red
-                var g = pixels[i + 1]; // Green
-                var b = pixels[i + 2]; // Blue
-                // Simple brightness formula: average of RGB
-                var brightness = (r + g + b) / 3;
-                totalBrightness += brightness;
-            }
-
-            var averageBrightness = totalBrightness / pixelCount;
-            return averageBrightness;
-        }
-
-        // Function to update the description color based on image brightness
-        function updateDescriptionColor(imageId, descriptionId) {
-            var img = document.getElementById(imageId);
-            var desc = document.getElementById(descriptionId);
-            
-            img.onload = function() {
-                var brightness = calculateBrightness(img);
-                if (brightness < 128) { // If the image is dark
-                    desc.classList.add('white'); // Make the description white
-                } else {
-                    desc.classList.remove('white'); // Keep the description black
-                }
-            }
-        }
-
-        // Update description color for all images
-        updateDescriptionColor('image1', 'desc1');
-        updateDescriptionColor('image2', 'desc2');
-        updateDescriptionColor('image3', 'desc3');
-        updateDescriptionColor('image4', 'desc4');
-        updateDescriptionColor('image5', 'desc5');
-        updateDescriptionColor('image6', 'desc6');
-    </script>
 </body>
 </html>
