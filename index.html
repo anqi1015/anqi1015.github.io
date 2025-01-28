@@ -1,131 +1,135 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angie's Portfolio</title>
-  <style>
-    body {
-      font-family: Calibri, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* General styling for the body */
+        body {
+            font-family: Calibri, sans-serif;
+            background-color: #f2f2f2; /* Light background for the body */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
 
-    .portfolio-title {
-      font-size: 36px;
-      color: #6a4c93; /* Purple color */
-      font-weight: bold;
-      margin-top: 20px;
-      text-align: center;
-    }
+        /* Portfolio container styling */
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            max-width: 1300px;
+        }
 
-    .portfolio-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px;
-      width: 70%;
-      max-width: 1000px;
-      margin-top: 40px;
-    }
+        /* Styling for each square */
+        .square {
+            position: relative;
+            width: 200px; /* Size of the square */
+            height: 200px; /* Size of the square */
+            background-color: #d6c8e1; /* Pastel color for background */
+            overflow: hidden; /* Ensures that the image stays within the square */
+            border-radius: 10px; /* Optional rounded corners */
+            transition: transform 0.3s ease; /* Smooth transition on hover */
+        }
 
-    .square {
-      position: relative;
-      width: 100%;
-      padding-top: 80%; /* Slightly smaller square */
-      background-color: #D8B8FF; /* pastel purple */
-      transition: background-color 0.3s ease;
-      overflow: hidden;
-      border-radius: 15px;
-    }
+        /* Image inside the square */
+        .square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the square */
+            object-position: center; /* Centers the image */
+        }
 
-    .title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-      color: white;
-      font-weight: bold;
-      transition: opacity 0.3s ease;
-    }
+        /* Title inside the square */
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the title */
+            font-size: 20px;
+            color: white;
+            z-index: 1;
+            text-align: center;
+        }
 
-    .description {
-      position: absolute;
-      top: 50%; /* Center vertically */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 18px; /* Larger description */
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
+        /* Description inside the square */
+        .description {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centers the description */
+            font-size: 16px;
+            color: white;
+            display: none; /* Hidden by default */
+            z-index: 2;
+            text-align: center;
+        }
 
-    .square:hover .title {
-      opacity: 0;
-    }
+        /* Show description on hover */
+        .square:hover .title {
+            display: none; /* Hide title on hover */
+        }
 
-    .square:hover .description {
-      opacity: 1;
-    }
+        .square:hover .description {
+            display: block; /* Show description on hover */
+        }
 
-    .image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
-      transition: opacity 0.3s ease;
-    }
-
-    .square:hover .image {
-      opacity: 1;
-    }
-
-  </style>
+        /* Optional: Hover effect on the square */
+        .square:hover {
+            transform: scale(1.05); /* Slightly enlarge the square on hover */
+        }
+    </style>
 </head>
 <body>
- <h1>My Portfolio</h1>
+    <h1>My Portfolio</h1>
     <div class="portfolio">
         <!-- Square 1 -->
         <div class="square">
-            <img src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/Image.png?raw=true" alt="Project 1">
-            <div class="title">AI Model</div>
-            <div class="description">Reduce hiring and training costs of employees by predicting which employees might leave the company</div>
+            <img src="https://raw.githubusercontent.com/anqi1015/anqi1015.github.io/refs/heads/main/images/Image.png" alt="Project 1">
+            <div class="title">Project 1</div>
+            <div class="description">Description of Project 1</div>
         </div>
-    <div class="square" id="square2">
-      <div class="title">Customer Segmentation</div>
-      <div class="description">Optimize marketing strategy by performing customer segmentation</div>
-      <img src="image2.jpg" alt="Project 2 Image" class="image"/>
-    </div>
-    <div class="square" id="square3">
-      <div class="title">Time Series Forecasting Model</div>
-      <div class="description">Predict future product prices</div>
-      <img src="image3.jpg" alt="Project 3 Image" class="image"/>
-    </div>
-    <div class="square" id="square4">
-      <div class="title">Deep Learning Model</div>
-      <div class="description">Automate and optimize the disease detection processes at a hospital</div>
-      <img src="image4.jpg" alt="Project 4 Image" class="image"/>
-    </div>
-    <div class="square" id="square5">
-      <div class="title">Natural Language Processing Model</div>
-      <div class="description">Analyze customer reviews on social media and identify customers sentiment</div>
-      <img src="image5.jpg" alt="Project 5 Image" class="image"/>
-    </div>
-    <div class="square" id="square6">
-      <div class="title">Classification Model</div>
-      <div class="description">Detect defects using classification and localization models</div>
-      <img src="image6.jpg" alt="Project 6 Image" class="image"/>
-    </div>
-  </div>
 
+        <!-- Square 2 -->
+        <div class="square">
+            <img src="https://github.com/your-username/your-repository-name/raw/main/images/image2.jpg" alt="Project 2">
+            <div class="title">Project 2</div>
+            <div class="description">Description of Project 2</div>
+        </div>
+
+        <!-- Square 3 -->
+        <div class="square">
+            <img src="https://github.com/your-username/your-repository-name/raw/main/images/image3.jpg" alt="Project 3">
+            <div class="title">Project 3</div>
+            <div class="description">Description of Project 3</div>
+        </div>
+
+        <!-- Square 4 -->
+        <div class="square">
+            <img src="https://github.com/your-username/your-repository-name/raw/main/images/image4.jpg" alt="Project 4">
+            <div class="title">Project 4</div>
+            <div class="description">Description of Project 4</div>
+        </div>
+
+        <!-- Square 5 -->
+        <div class="square">
+            <img src="https://github.com/your-username/your-repository-name/raw/main/images/image5.jpg" alt="Project 5">
+            <div class="title">Project 5</div>
+            <div class="description">Description of Project 5</div>
+        </div>
+
+        <!-- Square 6 -->
+        <div class="square">
+            <img src="https://github.com/your-username/your-repository-name/raw/main/images/image6.jpg" alt="Project 6">
+            <div class="title">Project 6</div>
+            <div class="description">Description of Project 6</div>
+        </div>
+    </div>
 </body>
 </html>
