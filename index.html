@@ -20,10 +20,9 @@
 
         /* Portfolio container styling */
         .portfolio {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 30px; /* Gap between squares */
             max-width: 1500px;
             width: 90%;
         }
@@ -31,8 +30,8 @@
         /* Styling for each square */
         .square {
             position: relative;
-            width: 300px; /* Size of the square */
-            height: 300px; /* Size of the square */
+            width: 100%; /* Takes full width of its grid column */
+            height: 300px; /* Fixed height */
             background-color: #d6c8e1; /* Pastel color for background */
             overflow: hidden; /* Ensures that the image stays within the square */
             border-radius: 10px; /* Optional rounded corners */
@@ -92,9 +91,9 @@
     <div class="portfolio">
         <!-- Square 1 -->
         <div class="square">
-            <img src="https://raw.githubusercontent.com/anqi1015/anqi1015.github.io/refs/heads/main/images/Image.png" alt="Project 1">
-            <div class="title">AI Model</div>
-            <div class="description">Reduce hiring and training costs of employees by predicting which employees might leave the company</div>
+            <img src="https://github.com/your-username/your-repository-name/raw/main/images/image1.jpg" alt="Project 1">
+            <div class="title">Project 1</div>
+            <div class="description">Description of Project 1</div>
         </div>
 
         <!-- Square 2 -->
