@@ -1,154 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Calibri, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f3ff; /* Light pastel purple */
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Calibri, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
 
-        .portfolio-container {
-            position: relative;
-            width: 90%;
-            height: 90%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      width: 80%;
+      max-width: 1200px;
+    }
 
-        /* Prism Styles */
-        .prism {
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            background-color: #b39ddb; /* Pastel purple */
-            transform: rotate(45deg);
-            opacity: 0.8;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            cursor: pointer;
-        }
+    .portfolio-title {
+      position: absolute;
+      top: 20px;
+      font-size: 36px;
+      color: #6a4c93; /* Purple color */
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
 
-        /* Positioning the prisms */
-        .prism:nth-child(1) { top: 5%; left: 5%; }
-        .prism:nth-child(2) { top: 5%; left: 35%; }
-        .prism:nth-child(3) { top: 5%; left: 65%; }
-        .prism:nth-child(4) { top: 50%; left: 5%; }
-        .prism:nth-child(5) { top: 50%; left: 35%; }
-        .prism:nth-child(6) { top: 50%; left: 65%; }
+    .square {
+      position: relative;
+      width: 100%;
+      padding-top: 100%; /* Aspect ratio 1:1 (square) */
+      background-color: #D8B8FF; /* pastel purple */
+      transition: background-color 0.3s ease;
+      overflow: hidden;
+      border-radius: 15px;
+    }
 
-        /* Project Title and Description */
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #6a4c9c; /* Darker purple */
-            margin-bottom: 10px;
-            display: none;
-        }
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+    }
 
-        .project-description {
-            font-size: 1.2rem;
-            color: #6a4c9c; /* Darker purple */
-            display: none;
-        }
+    .description {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-        /* Prism Hover Effects */
-        .prism:hover .project-title,
-        .prism:hover .project-description {
-            display: block;
-        }
+    .square:hover .title {
+      opacity: 0;
+    }
 
-        /* File input for image uploads */
-        .file-input {
-            display: none;
-        }
+    .square:hover .description {
+      opacity: 1;
+    }
 
-        /* Upload buttons for each prism */
-        .upload-button {
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            background-color: #6a4c9c;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      transition: opacity 0.3s ease;
+    }
 
-    </style>
+    .square:hover .image {
+      opacity: 1;
+    }
+
+  </style>
 </head>
 <body>
 
-<div class="portfolio-container">
-    <!-- Prisms Representing Projects -->
-    <div class="prism" id="prism1">
-        <h2 class="project-title" id="title1">Project 1</h2>
-        <p class="project-description" id="description1">A description of project 1.</p>
-    </div>
-    <div class="prism" id="prism2">
-        <h2 class="project-title" id="title2">Project 2</h2>
-        <p class="project-description" id="description2">A description of project 2.</p>
-    </div>
-    <div class="prism" id="prism3">
-        <h2 class="project-title" id="title3">Project 3</h2>
-        <p class="project-description" id="description3">A description of project 3.</p>
-    </div>
-    <div class="prism" id="prism4">
-        <h2 class="project-title" id="title4">Project 4</h2>
-        <p class="project-description" id="description4">A description of project 4.</p>
-    </div>
-    <div class="prism" id="prism5">
-        <h2 class="project-title" id="title5">Project 5</h2>
-        <p class="project-description" id="description5">A description of project 5.</p>
-    </div>
-    <div class="prism" id="prism6">
-        <h2 class="project-title" id="title6">Project 6</h2>
-        <p class="project-description" id="description6">A description of project 6.</p>
-    </div>
+  <div class="portfolio-title">My Portfolio</div>
 
-    <!-- Hidden File Inputs for Image Upload -->
-    <input type="file" id="file-input1" class="file-input" accept="image/*" onchange="updatePrismImage(event, 1)">
-    <input type="file" id="file-input2" class="file-input" accept="image/*" onchange="updatePrismImage(event, 2)">
-    <input type="file" id="file-input3" class="file-input" accept="image/*" onchange="updatePrismImage(event, 3)">
-    <input type="file" id="file-input4" class="file-input" accept="image/*" onchange="updatePrismImage(event, 4)">
-    <input type="file" id="file-input5" class="file-input" accept="image/*" onchange="updatePrismImage(event, 5)">
-    <input type="file" id="file-input6" class="file-input" accept="image/*" onchange="updatePrismImage(event, 6)">
-
-    <!-- Upload Buttons for Each Prism -->
-    <button class="upload-button" onclick="document.getElementById('file-input1').click()">Upload Image for Project 1</button>
-    <button class="upload-button" onclick="document.getElementById('file-input2').click()">Upload Image for Project 2</button>
-    <button class="upload-button" onclick="document.getElementById('file-input3').click()">Upload Image for Project 3</button>
-    <button class="upload-button" onclick="document.getElementById('file-input4').click()">Upload Image for Project 4</button>
-    <button class="upload-button" onclick="document.getElementById('file-input5').click()">Upload Image for Project 5</button>
-    <button class="upload-button" onclick="document.getElementById('file-input6').click()">Upload Image for Project 6</button>
-</div>
-
-<script>
-    // Function to update prism background image
-    function updatePrismImage(event, prismNumber) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const prism = document.getElementById('prism' + prismNumber);
-                prism.style.backgroundImage = 'url(' + e.target.result + ')';
-            };
-            reader.readAsDataURL(file);
-        }
-    }
-</script>
+  <div class="portfolio-container">
+    <div class="square" id="square1">
+      <div class="title">Project 1</div>
+      <div class="description">Description of Project 1</div>
+      <img src="image1.jpg" alt="Project 1 Image" class="image"/>
+    </div>
+    <div class="square" id="square2">
+      <div class="title">Project 2</div>
+      <div class="description">Description of Project 2</div>
+      <img src="image2.jpg" alt="Project 2 Image" class="image"/>
+    </div>
+    <div class="square" id="square3">
+      <div class="title">Project 3</div>
+      <div class="description">Description of Project 3</div>
+      <img src="image3.jpg" alt="Project 3 Image" class="image"/>
+    </div>
+    <div class="square" id="square4">
+      <div class="title">Project 4</div>
+      <div class="description">Description of Project 4</div>
+      <img src="image4.jpg" alt="Project 4 Image" class="image"/>
+    </div>
+    <div class="square" id="square5">
+      <div class="title">Project 5</div>
+      <div class="description">Description of Project 5</div>
+      <img src="image5.jpg" alt="Project 5 Image" class="image"/>
+    </div>
+    <div class="square" id="square6">
+      <div class="title">Project 6</div>
+      <div class="description">Description of Project 6</div>
+      <img src="image6.jpg" alt="Project 6 Image" class="image"/>
+    </div>
+  </div>
 
 </body>
 </html>
