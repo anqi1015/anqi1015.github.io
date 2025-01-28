@@ -65,7 +65,7 @@
             left: 50%;
             transform: translate(-50%, -50%); /* Centers the description */
             font-size: 18px; /* Increased font size */
-            color: black; /* Black description */
+            color: black; /* Black description by default */
             display: none; /* Hidden by default */
             z-index: 2;
             text-align: center;
@@ -84,68 +84,72 @@
         .square:hover {
             transform: scale(1.05); /* Slightly enlarge the square on hover */
         }
+
+        /* Styling for the white description */
+        .description.white {
+            color: white; /* White text color for dark images */
+        }
     </style>
 </head>
 <body>
-    <h1>Angie's Portfolio</h1>
+    <h1>My Portfolio</h1>
     <div class="portfolio">
         <!-- Square 1 -->
         <div class="square">
             <a href="https://example.com/project1" target="_blank">
-                <img src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/AI_model.png?raw=true" alt="Project 1">
+                <img id="image1" src="https://raw.githubusercontent.com/anqi1015/anqi1015.github.io/refs/heads/main/images/AI_model.png" alt="Project 1">
             </a>
-            <div class="title">AI Model</div>
-            <div class="description">Reduce hiring and training costs of employees by predicting which employees might leave the company</div>
+            <div class="title">Project 1</div>
+            <div class="description" id="desc1">This is a detailed description of Project 1. It includes all the technologies used and the problem it solves.</div>
         </div>
 
         <!-- Square 2 -->
         <div class="square">
             <a href="https://example.com/project2" target="_blank">
-                <img src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/customer_seg.jpeg?raw=true" alt="Project 2">
+                <img id="image2" src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/customer_seg.jpeg?raw=true" alt="Project 2">
             </a>
-            <div class="title">Customer Segmentation</div>
-            <div class="description">Optimize marketing strategy by performing customer segmentation</div>
+            <div class="title">Project 2</div>
+            <div class="description" id="desc2">Project 2 is a web application that allows users to manage their tasks efficiently. Built using HTML, CSS, and JavaScript.</div>
         </div>
 
         <!-- Square 3 -->
         <div class="square">
             <a href="https://example.com/project3" target="_blank">
-                <img src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/time_series.png?raw=true" alt="Project 3">
+                <img id="image3" src="https://github.com/anqi1015/anqi1015.github.io/blob/main/images/time_series.png?raw=true" alt="Project 3">
             </a>
-            <div class="title">Time Series Model</div>
-            <div class="description">Develop time series forecasting models to predict future product prices 3</div>
+            <div class="title">Project 3</div>
+            <div class="description" id="desc3">A mobile app developed using React Native, allowing users to track their daily habits and improve productivity.</div>
         </div>
 
         <!-- Square 4 -->
         <div class="square">
             <a href="https://example.com/project4" target="_blank">
-                <img src="https://github.com/your-username/your-repository-name/raw/main/images/image4.jpg" alt="Project 4">
+                <img id="image4" src="https://github.com/your-username/your-repository-name/raw/main/images/image4.jpg" alt="Project 4">
             </a>
             <div class="title">Project 4</div>
-            <div class="description">Description of Project 4</div>
+            <div class="description" id="desc4">This project is a full-stack application using Node.js and MongoDB to manage a book collection.</div>
         </div>
 
         <!-- Square 5 -->
         <div class="square">
             <a href="https://example.com/project5" target="_blank">
-                <img src="https://github.com/your-username/your-repository-name/raw/main/images/image5.jpg" alt="Project 5">
+                <img id="image5" src="https://github.com/your-username/your-repository-name/raw/main/images/image5.jpg" alt="Project 5">
             </a>
             <div class="title">Project 5</div>
-            <div class="description">Description of Project 5</div>
+            <div class="description" id="desc5">A portfolio website built with HTML, CSS, and JavaScript to showcase various personal projects and skills.</div>
         </div>
 
         <!-- Square 6 -->
         <div class="square">
             <a href="https://example.com/project6" target="_blank">
-                <img src="https://github.com/your-username/your-repository-name/raw/main/images/image6.jpg" alt="Project 6">
+                <img id="image6" src="https://github.com/your-username/your-repository-name/raw/main/images/image6.jpg" alt="Project 6">
             </a>
             <div class="title">Project 6</div>
-            <div class="description">Description of Project 6</div>
+            <div class="description" id="desc6">This is an AI-powered chatbot built with Python and TensorFlow that can assist with customer service tasks.</div>
         </div>
     </div>
-</body>
 
-        <script>
+    <script>
         // Function to calculate the brightness of an image
         function calculateBrightness(img) {
             var canvas = document.createElement('canvas');
@@ -197,5 +201,4 @@
         updateDescriptionColor('image6', 'desc6');
     </script>
 </body>
-</html>
 </html>
