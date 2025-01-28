@@ -6,7 +6,7 @@
     <title>My Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Calibri;
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
@@ -34,66 +34,80 @@
         }
 
         .square {
-            width: 300px;  /* Square size */
-            height: 300px; /* Square size */
-            border-radius: 15px;  
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;  /* Hide overflow for image */
+            width: 300px;
+            height: 300px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            background-color: #ccc;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .square img {
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* Ensure image covers entire square */
-            transition: opacity 0.3s ease;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .square .label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .square:hover {
             transform: scale(1.1);
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .square:hover img {
-            opacity: 0.7;  /* Slight opacity effect on hover */
+        .square:hover .label {
+            color: #fff;
+            opacity: 0.9;
         }
-
-        .square-1 { background-color: #f5a7b8; }
-        .square-2 { background-color: #f8c8d8; }
-        .square-3 { background-color: #d0e0f0; }
-        .square-4 { background-color: #c9e3b2; }
-        .square-5 { background-color: #f6d7a7; }
-        .square-6 { background-color: #d3a7f5; }
-
     </style>
 </head>
 <body>
 
     <h1>Angie's Projects</h1>
     <div class="container">
-        <div class="square square-1" onclick="window.location.href='https://your-project-link1.com'">
-            <img src="image1.jpg" alt="AI Model">
+        <div class="square" onclick="window.location.href='https://your-project-link1.com'">
+            <img src="https://via.placeholder.com/250" alt="Project 1">
+            <div class="label">Project 1</div>
         </div>
-        <div class="square square-2" onclick="window.location.href='https://your-project-link2.com'">
-            <img src="image2.jpg" alt="Customer Segmentation">
+        <div class="square" onclick="window.location.href='https://your-project-link2.com'">
+            <img src="https://via.placeholder.com/250" alt="Project 2">
+            <div class="label">Project 2</div>
         </div>
-        <div class="square square-3" onclick="window.location.href='https://your-project-link3.com'">
-            <img src="image3.jpg" alt="Time Series Forecasting">
+        <div class="square" onclick="window.location.href='https://your-project-link3.com'">
+            <img src="https://via.placeholder.com/250" alt="Project 3">
+            <div class="label">Project 3</div>
         </div>
-        <div class="square square-4" onclick="window.location.href='https://your-project-link4.com'">
-            <img src="image4.jpg" alt="Deep Learning Model">
+        <div class="square" onclick="window.location.href='https://your-project-link4.com'">
+            <img src="https://via.placeholder.com/250" alt="Project 4">
+            <div class="label">Project 4</div>
         </div>
-        <div class="square square-5" onclick="window.location.href='https://your-project-link5.com'">
-            <img src="image5.jpg" alt="Natural Language Processing Model">
+        <div class="square" onclick="window.location.href='https://your-project-link5.com'">
+            <img src="https://via.placeholder.com/250" alt="Project 5">
+            <div class="label">Project 5</div>
         </div>
-        <div class="square square-6" onclick="window.location.href='https://your-project-link6.com'">
-            <img src="image6.jpg" alt="Classification Model">
+        <div class="square" onclick="window.location.href='https://your-project-link6.com'">
+            <img src="https://via.placeholder.com/250" alt="Project 6">
+            <div class="label">Project 6</div>
         </div>
     </div>
 
 </body>
 </html>
+
