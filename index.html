@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
             background-color: #f5f3ff; /* Light pastel purple */
+            overflow: hidden;
         }
 
         .portfolio-container {
@@ -28,42 +29,44 @@
         /* Prism Styles */
         .prism {
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             background-color: #b39ddb; /* Pastel purple */
             transform: rotate(45deg);
             opacity: 0.8;
             background-size: cover;
             background-position: center;
             transition: transform 0.3s ease, opacity 0.3s ease;
+            cursor: pointer;
         }
 
         /* Positioning the prisms */
-        .prism:nth-child(1) { top: 10%; left: 10%; }
-        .prism:nth-child(2) { top: 10%; left: 30%; }
-        .prism:nth-child(3) { top: 10%; left: 50%; }
-        .prism:nth-child(4) { top: 60%; left: 10%; }
-        .prism:nth-child(5) { top: 60%; left: 30%; }
-        .prism:nth-child(6) { top: 60%; left: 50%; }
+        .prism:nth-child(1) { top: 5%; left: 5%; }
+        .prism:nth-child(2) { top: 5%; left: 35%; }
+        .prism:nth-child(3) { top: 5%; left: 65%; }
+        .prism:nth-child(4) { top: 50%; left: 5%; }
+        .prism:nth-child(5) { top: 50%; left: 35%; }
+        .prism:nth-child(6) { top: 50%; left: 65%; }
 
-        /* Title Styling */
-        .title {
-            font-size: 3rem;
-            color: #6a4c9c; /* Darker purple */
-            transition: opacity 1s ease;
-        }
-
-        /* Description */
-        .description {
+        /* Project Title and Description */
+        .project-title {
             font-size: 1.5rem;
+            font-weight: bold;
             color: #6a4c9c; /* Darker purple */
-            opacity: 0;
-            transition: opacity 1s ease;
+            margin-bottom: 10px;
+            display: none;
         }
 
-        /* When description is centered */
-        .centered-description {
-            opacity: 1;
+        .project-description {
+            font-size: 1.2rem;
+            color: #6a4c9c; /* Darker purple */
+            display: none;
+        }
+
+        /* Prism Hover Effects */
+        .prism:hover .project-title,
+        .prism:hover .project-description {
+            display: block;
         }
 
         /* File input for image uploads */
@@ -71,6 +74,7 @@
             display: none;
         }
 
+        /* Upload buttons for each prism */
         .upload-button {
             position: absolute;
             top: 5%;
@@ -88,18 +92,33 @@
 <body>
 
 <div class="portfolio-container">
-    <!-- 6 Prisms with background images -->
-    <div class="prism" id="prism1"></div>
-    <div class="prism" id="prism2"></div>
-    <div class="prism" id="prism3"></div>
-    <div class="prism" id="prism4"></div>
-    <div class="prism" id="prism5"></div>
-    <div class="prism" id="prism6"></div>
+    <!-- Prisms Representing Projects -->
+    <div class="prism" id="prism1">
+        <h2 class="project-title" id="title1">Project 1</h2>
+        <p class="project-description" id="description1">A description of project 1.</p>
+    </div>
+    <div class="prism" id="prism2">
+        <h2 class="project-title" id="title2">Project 2</h2>
+        <p class="project-description" id="description2">A description of project 2.</p>
+    </div>
+    <div class="prism" id="prism3">
+        <h2 class="project-title" id="title3">Project 3</h2>
+        <p class="project-description" id="description3">A description of project 3.</p>
+    </div>
+    <div class="prism" id="prism4">
+        <h2 class="project-title" id="title4">Project 4</h2>
+        <p class="project-description" id="description4">A description of project 4.</p>
+    </div>
+    <div class="prism" id="prism5">
+        <h2 class="project-title" id="title5">Project 5</h2>
+        <p class="project-description" id="description5">A description of project 5.</p>
+    </div>
+    <div class="prism" id="prism6">
+        <h2 class="project-title" id="title6">Project 6</h2>
+        <p class="project-description" id="description6">A description of project 6.</p>
+    </div>
 
-    <h1 class="title" id="title">My Projects</h1>
-    <p class="description" id="description">Explore the projects I've worked on!</p>
-
-    <!-- Hidden file input fields for each prism -->
+    <!-- Hidden File Inputs for Image Upload -->
     <input type="file" id="file-input1" class="file-input" accept="image/*" onchange="updatePrismImage(event, 1)">
     <input type="file" id="file-input2" class="file-input" accept="image/*" onchange="updatePrismImage(event, 2)">
     <input type="file" id="file-input3" class="file-input" accept="image/*" onchange="updatePrismImage(event, 3)">
@@ -107,13 +126,13 @@
     <input type="file" id="file-input5" class="file-input" accept="image/*" onchange="updatePrismImage(event, 5)">
     <input type="file" id="file-input6" class="file-input" accept="image/*" onchange="updatePrismImage(event, 6)">
 
-    <!-- Buttons to trigger file input -->
-    <button class="upload-button" onclick="document.getElementById('file-input1').click()">Upload Image for Prism 1</button>
-    <button class="upload-button" onclick="document.getElementById('file-input2').click()">Upload Image for Prism 2</button>
-    <button class="upload-button" onclick="document.getElementById('file-input3').click()">Upload Image for Prism 3</button>
-    <button class="upload-button" onclick="document.getElementById('file-input4').click()">Upload Image for Prism 4</button>
-    <button class="upload-button" onclick="document.getElementById('file-input5').click()">Upload Image for Prism 5</button>
-    <button class="upload-button" onclick="document.getElementById('file-input6').click()">Upload Image for Prism 6</button>
+    <!-- Upload Buttons for Each Prism -->
+    <button class="upload-button" onclick="document.getElementById('file-input1').click()">Upload Image for Project 1</button>
+    <button class="upload-button" onclick="document.getElementById('file-input2').click()">Upload Image for Project 2</button>
+    <button class="upload-button" onclick="document.getElementById('file-input3').click()">Upload Image for Project 3</button>
+    <button class="upload-button" onclick="document.getElementById('file-input4').click()">Upload Image for Project 4</button>
+    <button class="upload-button" onclick="document.getElementById('file-input5').click()">Upload Image for Project 5</button>
+    <button class="upload-button" onclick="document.getElementById('file-input6').click()">Upload Image for Project 6</button>
 </div>
 
 <script>
@@ -129,25 +148,6 @@
             reader.readAsDataURL(file);
         }
     }
-
-    // Fade effect on scroll
-    const description = document.getElementById('description');
-    const title = document.getElementById('title');
-
-    window.addEventListener('scroll', () => {
-        const descriptionTop = description.getBoundingClientRect().top;
-        const descriptionHeight = description.offsetHeight;
-        const windowHeight = window.innerHeight;
-
-        // Fade out title when the description is centered
-        if (descriptionTop < windowHeight / 2 && descriptionTop + descriptionHeight > windowHeight / 2) {
-            title.style.opacity = '0';
-            description.classList.add('centered-description');
-        } else {
-            title.style.opacity = '1';
-            description.classList.remove('centered-description');
-        }
-    });
 </script>
 
 </body>
