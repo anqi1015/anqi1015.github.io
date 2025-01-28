@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Angie's Portfolio</title>
   <style>
     body {
       font-family: Calibri, sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       background-color: #f0f0f0;
+    }
+
+    .portfolio-title {
+      font-size: 36px;
+      color: #6a4c93; /* Purple color */
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
     }
 
     .portfolio-container {
@@ -22,16 +31,7 @@
       grid-gap: 20px;
       width: 80%;
       max-width: 1200px;
-    }
-
-    .portfolio-title {
-      position: absolute;
-      top: 20px;
-      font-size: 36px;
-      color: #6a4c93; /* Purple color */
-      font-weight: bold;
-      text-align: center;
-      width: 100%;
+      margin-top: 40px;
     }
 
     .square {
@@ -91,7 +91,7 @@
 </head>
 <body>
 
-  <div class="portfolio-title">My Portfolio</div>
+  <div class="portfolio-title">Angie's Portfolio</div>
 
   <div class="portfolio-container">
     <div class="square" id="square1">
